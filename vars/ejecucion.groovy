@@ -29,10 +29,8 @@ def call(){
 						println 'Pipeline'
 						
 	                    if (params.buildTool == "gradle") {
-	                        def ejecucion = load 'gradle.groovy'
 		                    gradle()
 	                    } else {
-	                        def ejecucion = load 'maven.groovy'
 		                    maven()
 	                    }
 
