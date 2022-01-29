@@ -7,7 +7,10 @@
 
 */
 
-def call(){
+def call(String pipelineType){
+  
+      figle pipelineType
+
     stage('Build y Unit Test') {
       STAGE = env.STAGE_NAME
       sh 'chmod +x gradlew'

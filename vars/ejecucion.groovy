@@ -29,11 +29,13 @@ def call(){
 				script{
 					try {
 						println 'Pipeline'
+
+						def ci_or_cd = verifyBranchName()
 						
 	                    if (params.buildTool == "gradle") {
-		                    gradle()
+		                    gradle(verifyBranchName())
 	                    } else {
-		                    maven()
+		                    maven(verifyBranchName())
 	                    }
 
 	                    slackSend color: 'good', message: "[Rodrigo Catalán][${env.JOB_NAME}][${params.buildTool}] Ejecución exitosa"
@@ -48,6 +50,16 @@ def call(){
 	}
 }
 
+}
+
+def verifyBranchName(){
+	//def is_ci_or_cd = ( env.GIT_BRANCH.contains('feature-')) ? 'CI'  : 'CD' 
+	if(env.GIT_BRANCH.contains('feature-') || env.GIT_BRANCH.contains('develop-')) {
+		return 'CI'
+	} else {
+		return 'CD'
+	}
+	return 
 }
 
 return this;

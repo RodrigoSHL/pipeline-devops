@@ -8,7 +8,9 @@
 */
 
 
-def call(){
+def call(String pipelineType){
+
+    figle pipelineType
     stage('Build') {
         STAGE = env.STAGE_NAME
         sh 'chmod +x mvnw'
