@@ -57,7 +57,7 @@ def call(String pipelineType){
         } 
     } else {
         stage('Donwload-Nexus') {
-            sh "curl -X GET -u admin:Rodrixxx69. http://192.168.1.107:8081/repository/test-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar -O"
+            sh "curl -X GET -u admin:Rodrixxx69. http://192.168.1.86:8081/repository/test-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar -O"
         }
         stage('Run') {
             STAGE = env.STAGE_NAME
