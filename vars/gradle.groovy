@@ -63,7 +63,6 @@ def call(String pipelineType){
         stage('Run Jar') {
             STAGE = env.STAGE_NAME
             sh 'chmod +x mvnw'
-            sh 'nohup bash mvnw spring-boot:run &'
             println "Stage: ${env.STAGE_NAME}"
         }
         stage('Test') {
