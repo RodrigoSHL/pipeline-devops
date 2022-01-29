@@ -83,7 +83,7 @@ def call(String pipelineType){
                 [
                     $class: 'MavenPackage',
                     mavenAssetList: [
-                        [classifier: '', extension: '', filePath: "${env.WORKSPACE}/build/libs/DevOpsUsach2020-0.0.1.jar"]
+                        [classifier: '', extension: '', filePath: "${env.WORKSPACE}/build/DevOpsUsach2020-0.0.1.jar"]
                     ],
                     mavenCoordinate: [
                         artifactId: 'DevOpsUsach2020',
