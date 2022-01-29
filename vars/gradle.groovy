@@ -78,7 +78,7 @@ def call(String pipelineType){
         stage('nexus') {
             STAGE = env.STAGE_NAME
             nexusPublisher nexusInstanceId: 'Nexus-test-gradle',
-            nexusRepositoryId: 'test-nexus',
+            nexusRepositoryId: 'test-nexus-gradle',
             packages: [
                 [
                     $class: 'MavenPackage',
