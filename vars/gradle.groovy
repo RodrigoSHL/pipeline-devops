@@ -9,7 +9,7 @@
 
 def call(String pipelineType){
   
-      figle pipelineType
+      figlet pipelineType
 
     stage('Build y Unit Test') {
       STAGE = env.STAGE_NAME
