@@ -20,13 +20,13 @@ def call(String pipelineType){
     hasSonarStage = lst.any{element -> element == "sonar"}
     println(value); 
 
-    hasRunStage = lst.any{element -> element == "sonar"}
+    hasRunStage = lst.any{element -> element == "run"}
     println(value); 
 
-    hasTestStage = lst.any{element -> element == "sonar"}
+    hasTestStage = lst.any{element -> element == "test"}
     println(value); 
 
-    hasNexusStage = lst.any{element -> element == "sonar"}
+    hasNexusStage = lst.any{element -> element == "nexus"}
     println(value); 
 
     if (pipelineType == 'CI') {
