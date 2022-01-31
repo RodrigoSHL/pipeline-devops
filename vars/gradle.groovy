@@ -12,7 +12,7 @@ def call(String pipelineType){
     figlet pipelineType
 
     //Simulación de string enviado por usuario
-    String pipelineStages = "build,sonar,run,test,nexus";
+    String pipelineStages = "build";
     //Parseo de string enviado por usuario a un arreglo de string separados por , 
     def lst = pipelineStages.split(',');
 		

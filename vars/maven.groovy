@@ -92,12 +92,12 @@ def call(String pipelineType){
                 }
             }
             if (hasJarStage){
-               stage('Jar') {
-                figlet env.STAGE_NAME
-                STAGE = env.STAGE_NAME
-                sh './mvnw clean package -e'
-                println "Stage: ${env.STAGE_NAME}"
-            } 
+                stage('Jar') {
+                    figlet env.STAGE_NAME
+                    STAGE = env.STAGE_NAME
+                    sh './mvnw clean package -e'
+                    println "Stage: ${env.STAGE_NAME}"
+                } 
             }
             if (hasSonarStage){
                 stage('Sonar') {
