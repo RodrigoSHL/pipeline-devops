@@ -11,6 +11,17 @@ def call(String pipelineType){
   
     figlet pipelineType
 
+    def lst = [1,2,3,4];
+      def value;
+		
+    // Is there any value above 2
+    value = lst.any{element -> element > 2}
+    println(value);
+		
+    // Is there any value above 4
+    value = lst.any{element -> element > 4}
+    println(value); 
+
     if (pipelineType == 'CI') {
       stage('Build y Unit Test') {
         figlet env.STAGE_NAME
