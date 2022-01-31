@@ -28,7 +28,7 @@ def call(){
 				script{
 					try {
 						println 'Pipeline'
-						echo ${params.etapasPipeline}
+						println "${params.etapasPipeline}"
 						def ci_or_cd = verifyBranchName()
 						
 	                    if (params.buildTool == "gradle") {
