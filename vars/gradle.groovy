@@ -10,6 +10,7 @@
 def call(String pipelineType, String pipelineStages ){
   
     figlet pipelineType
+    figlet pipelineStages
 
     if (pipelineType == 'CI') {
       stage('Build y Unit Test') {
