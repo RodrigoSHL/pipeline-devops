@@ -84,7 +84,6 @@ def call(String pipelineType){
                     println "Stage: ${env.STAGE_NAME}"
                 }
             } 
-            
             if(hasSonarStage){
                 stage('Sonar') {
                     figlet env.STAGE_NAME
