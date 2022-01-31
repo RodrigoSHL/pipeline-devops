@@ -12,22 +12,21 @@ def call(String pipelineType){
     figlet pipelineType
 
     def lst = ["build","sonar","run","test"];
-    def value;
 		
-    hasBuildStage = lst.any{element -> element == "build"}
-    println(value);
+    def hasBuildStage = lst.any{element -> element == "build"}
+    println(hasBuildStage);
 		
-    hasSonarStage = lst.any{element -> element == "sonar"}
-    println(value); 
+    def hasSonarStage = lst.any{element -> element == "sonar"}
+    println(hasSonarStage); 
 
-    hasRunStage = lst.any{element -> element == "run"}
-    println(value); 
+    def hasRunStage = lst.any{element -> element == "run"}
+    println(hasRunStage); 
 
-    hasTestStage = lst.any{element -> element == "test"}
-    println(value); 
+    def hasTestStage = lst.any{element -> element == "test"}
+    println(hasTestStage); 
 
-    hasNexusStage = lst.any{element -> element == "nexus"}
-    println(value); 
+    def hasNexusStage = lst.any{element -> element == "nexus"}
+    println(hasNexusStage); 
 
     if (pipelineType == 'CI') {
       stage('Build y Unit Test') {
