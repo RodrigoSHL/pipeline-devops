@@ -19,8 +19,7 @@ def call(){
 
 	parameters {
 		choice(name: 'buildTool', choices: ['gradle', 'maven'], description: 'Indicar herramienta de construcción')
-		choice(name: 'stages', choices: ['build', 'test', 'run'], description: 'Indica stages que deseas ejecutar')
-
+ 		string defaultValue : ' ' , description : ' Agregar etapa de ejecución (separar con coma ) ' , name : ' etapasPipeline '
 	}
 
 	stages{
