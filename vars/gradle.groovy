@@ -65,7 +65,7 @@ def call(String pipelineType){
             sh "curl -X GET 'http://localhost:8082/rest/mscovid/test?msg=testing'"
             }
         }
-        if(hasTestStage){
+        if(hasNexusStage){
             stage('nexus') {
                 figlet env.STAGE_NAME
                 STAGE = env.STAGE_NAME
