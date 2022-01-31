@@ -11,15 +11,15 @@ def call(String pipelineType){
   
     figlet pipelineType
 
-    def lst = [1,2,3,4];
-      def value;
+    def lst = ["build","sonar","run","test","nexus"];
+    def value;
 		
     // Is there any value above 2
-    value = lst.any{element -> element > 2}
+    value = lst.any{element -> element == "build"}
     println(value);
 		
     // Is there any value above 4
-    value = lst.any{element -> element > 4}
+    value = lst.any{element -> element == "sonar"}
     println(value); 
 
     if (pipelineType == 'CI') {
