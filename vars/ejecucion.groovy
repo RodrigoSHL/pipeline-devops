@@ -28,17 +28,17 @@ def call(){
 				script{
 					try {
 						println 'Pipeline'
-
+						 
 						def ci_or_cd = verifyBranchName()
 						
 	                    if (params.buildTool == "gradle") {
 							
 							figlet 'Ejecución con gradle'
-		                    gradle(verifyBranchName())
+		                    gradle(verifyBranchName(), params.etapasPipeline)
 	                    } else {
 							figlet 'Ejecución con maven'
 
-		                    maven(verifyBranchName())
+		                    maven(verifyBranchName(), params.etapasPipeline)
 	                    }
 
 	                    slackSend color: 'good', message: "[Rodrigo Catalán][${env.JOB_NAME}][${params.buildTool}] Ejecución exitosa"

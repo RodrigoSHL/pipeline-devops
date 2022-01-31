@@ -7,7 +7,7 @@
 
 */
 
-def call(String pipelineType){
+def call(String pipelineType, String pipelineStages ){
   
     figlet pipelineType
 
