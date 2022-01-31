@@ -10,18 +10,16 @@
 def call(String pipelineType){
   
     figlet pipelineType
-      String a = "build,sonar";
-      String[] str;
-      str = a.split(',');
-      
-      for( String values : str )
-      println(values);
+    String pipelineStages = "build,sonar,miVieja";
+    def lst = pipelineStages.split(',');
+    
+    for( String values : lst )
+    println(values);
 
 
 
 
 
-    def lst = ["build"];
 		
     def hasBuildStage = lst.any{element -> element == "build"}
     def hasSonarStage = lst.any{element -> element == "sonar"}
