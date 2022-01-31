@@ -10,17 +10,13 @@
 def call(String pipelineType){
   
     figlet pipelineType
-    String pipelineStages = "build,sonar,miVieja";
+
+    //Simulación de string enviado por usuario
+    String pipelineStages = "build,sonar,run,test,nexus";
+    //Parseo de string enviado por usuario a un arreglo de string separados por , 
     def lst = pipelineStages.split(',');
-    
-    for( String values : lst )
-    println(values);
-
-
-
-
-
 		
+    //Inicialización de variables segun existencia en arreglo
     def hasBuildStage = lst.any{element -> element == "build"}
     def hasSonarStage = lst.any{element -> element == "sonar"}
     def hasRunStage = lst.any{element -> element == "run"}
