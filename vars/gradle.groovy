@@ -7,13 +7,10 @@
 
 */
 
-def call(String pipelineType, String pipelineStagesTest){
+def call(String pipelineType, String pipelineStages){
   
     figlet pipelineType
-    figlet pipelineStagesTest
 
-    //Simulación de string enviado por usuario
-    String pipelineStages = "build";
     //Parseo de string enviado por usuario a un arreglo de string separados por , 
     def lst = pipelineStages.split(',');
 		
@@ -24,7 +21,9 @@ def call(String pipelineType, String pipelineStagesTest){
     def hasTestStage = lst.any{element -> element == "test"}
     def hasNexusStage = lst.any{element -> element == "nexus"}
 
+    //Condición si es CI o CD
     if (pipelineType == 'CI') {
+        //Condición si esque viene un arreglo vacío, ejecuta todo
         if(!lst.any()){
             stage('Build y Unit Test') {
                 figlet env.STAGE_NAME
@@ -76,6 +75,7 @@ def call(String pipelineType, String pipelineStagesTest){
             } 
 
         }else {
+            //Condición si esque viene un arreglo con stages, ejecuta segun stage existente
             if(hasBuildStage){
                 stage('Build y Unit Test') {
                     figlet env.STAGE_NAME
