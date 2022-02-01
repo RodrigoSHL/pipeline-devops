@@ -7,9 +7,10 @@
 
 */
 
-def call(String pipelineType){
+def call(String pipelineType, String pipelineStagesTest){
   
     figlet pipelineType
+    figlet pipelineStagesTest
 
     //Simulación de string enviado por usuario
     String pipelineStages = "build";
