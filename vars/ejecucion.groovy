@@ -41,7 +41,7 @@ def call(){
 		                    maven(verifyBranchName(), params.etapasPipeline)
 	                    }
 
-	                    slackSend color: 'good', message: "[Rodrigo Catalán][${env.JOB_NAME}][${params.buildTool}] Ejecución exitosa"
+	                    slackSend color: 'good', message: "[Rodrigo Catalán][${env.JOB_NAME}][${params.buildTool}] Ejecución exitosa ${STAGE}"
 
 					} catch (Exception e){
 					    slackSend color: 'danger', message: "[Rodrigo Catalán][${env.JOB_NAME}][${params.buildTool}] Ejecución fallida en stage ${STAGE}"

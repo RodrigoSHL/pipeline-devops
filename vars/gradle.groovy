@@ -24,7 +24,7 @@ def call(String pipelineType, String pipelineStages){
     //Condición si es CI o CD
     if (pipelineType == 'CI') {
         //Condición si esque viene un arreglo vacío, ejecuta todo
-        if(!lst.any()){
+        if(!lst.any()){ 
             stage('Build y Unit Test') {
                 figlet env.STAGE_NAME
                 STAGE = env.STAGE_NAME
