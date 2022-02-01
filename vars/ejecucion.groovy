@@ -19,7 +19,7 @@ def call(){
 
 	parameters {
 		choice(name: 'buildTool', choices: ['gradle', 'maven'], description: 'Indicar herramienta de construcción')
- 		string defaultValue : ' ' , description : ' Agregar etapa de ejecución (separar con coma ) ' , name : ' etapasPipeline '
+ 		string defaultValue: '', description: 'Agregar etapa de ejecución (separar con coma)', name: 'etapasPipeline'
 	}
 
 	stages{
@@ -28,7 +28,7 @@ def call(){
 				script{
 					try {
 						println 'Pipeline'
-						println "${params.etapasPipeline}"
+						println params.etapasPipeline
 						def ci_or_cd = verifyBranchName()
 						
 	                    if (params.buildTool == "gradle") {
