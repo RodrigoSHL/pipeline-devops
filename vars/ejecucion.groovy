@@ -26,6 +26,7 @@ def call(){
 		stage('Pipeline'){
 			steps{
 				script{
+					STAGE = ''
 					try {
 						println 'Pipeline'
 						
