@@ -26,13 +26,15 @@ def call(String pipelineType, String pipelineStages){
         //Condición si esque viene un arreglo vacío, ejecuta todo
         if(!lst.any()){ 
             stage('Build y Unit Test') {
+                println "Stage: ${env.STAGE_NAME}"
                 figlet env.STAGE_NAME
                 STAGE = env.STAGE_NAME
                 sh 'chmod +x gradlew'
                 sh './gradlew clean build'
-                println "Stage: ${env.STAGE_NAME}"
+                
             }
             stage('Sonar') {
+                println "Stage: ${env.STAGE_NAME}"
                 figlet env.STAGE_NAME
                 STAGE = env.STAGE_NAME
                 def scannerHome = tool 'sonar-scanner'; 
@@ -41,6 +43,7 @@ def call(String pipelineType, String pipelineStages){
                 }  
             }  
             stage('Run') {
+            println "Stage: ${env.STAGE_NAME}"
             figlet env.STAGE_NAME
             STAGE = env.STAGE_NAME
             sh 'nohup bash gradlew bootRun &'
@@ -48,12 +51,14 @@ def call(String pipelineType, String pipelineStages){
             sleep 20
             }
             stage('Test') {
+                println "Stage: ${env.STAGE_NAME}"
                 figlet env.STAGE_NAME
                 STAGE = env.STAGE_NAME
                 println "Stage: ${env.STAGE_NAME}"
                 sh "curl -X GET 'http://localhost:8082/rest/mscovid/test?msg=testing'"
             }
             stage('nexus') {
+                println "Stage: ${env.STAGE_NAME}"
                 figlet env.STAGE_NAME
                 STAGE = env.STAGE_NAME
                 nexusPublisher nexusInstanceId: 'Nexus-test-gradle',
